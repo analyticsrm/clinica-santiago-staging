@@ -64,7 +64,7 @@
 
     /* ── HERO ────────────────────────────────── */
     #hero{min-height:100vh;display:flex;align-items:center;padding-top:68px;background:var(--preto);position:relative;overflow:hidden}
-    .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80') center 30%/cover no-repeat;opacity:.42}
+    .hero-bg{position:absolute;inset:0;background:url('assets/hero.webp') center center/cover no-repeat;opacity:.42}
     .hero-grad{position:absolute;inset:0;background:linear-gradient(105deg,rgba(4,5,5,1) 46%,rgba(4,5,5,.3) 100%)}
     .hero-content{position:relative;z-index:2;padding:80px 0;max-width:680px}
     .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px}
@@ -246,6 +246,7 @@
     }
     @media(max-width:768px){
       .nav-links{display:none}
+      .hero-content{padding-left:24px;padding-right:24px}
       .prob-layout{gap:28px}
       .prob-items{grid-template-columns:1fr 1fr}
       .hist-inner{grid-template-columns:1fr;gap:36px}
@@ -511,7 +512,7 @@
 <section id="historia">
   <div class="container hist-inner">
     <div class="hist-img reveal">
-      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80" alt="Clínica Santiago, ambiente de atendimento" loading="lazy">
+      <img src="assets/nossa-historia.webp" alt="Clínica Santiago, ambiente de atendimento" loading="lazy">
     </div>
     <div class="reveal reveal-d2">
       <span class="label label--orange">Nossa história</span>
@@ -535,7 +536,7 @@
     </div>
     <div class="eq-grid">
       <div class="eq-card reveal reveal-d1">
-        <div class="eq-photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=80" alt="Geovanna Santiago" loading="lazy"></div>
+        <div class="eq-photo"><img src="assets/geovanna.webp" alt="Geovanna Santiago" loading="lazy"></div>
         <div class="eq-info">
           <h3>Geovanna Santiago</h3>
           <div class="eq-cargo">Fisioterapeuta</div>
@@ -547,7 +548,7 @@
         </div>
       </div>
       <div class="eq-card reveal reveal-d2">
-        <div class="eq-photo"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&q=80" alt="Mariana Gionimi" loading="lazy"></div>
+        <div class="eq-photo"><img src="assets/mariana.webp" alt="Mariana Gionimi" loading="lazy"></div>
         <div class="eq-info">
           <h3>Mariana Gionimi</h3>
           <div class="eq-cargo">Fisioterapeuta</div>
@@ -559,7 +560,7 @@
         </div>
       </div>
       <div class="eq-card reveal reveal-d3">
-        <div class="eq-photo"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&q=80" alt="André Camis" loading="lazy"></div>
+        <div class="eq-photo"><img src="assets/andre.webp" alt="André Camis" loading="lazy"></div>
         <div class="eq-info">
           <h3>André Camis</h3>
           <div class="eq-cargo">Fisioterapeuta</div>
@@ -571,7 +572,7 @@
         </div>
       </div>
       <div class="eq-card reveal reveal-d4">
-        <div class="eq-photo"><img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&q=80" alt="Fernanda Woycick" loading="lazy"></div>
+        <div class="eq-photo"><img src="assets/fernanda.webp" alt="Fernanda Woycick" loading="lazy"></div>
         <div class="eq-info">
           <h3>Fernanda Woycick</h3>
           <div class="eq-cargo">Fisioterapeuta</div>
