@@ -62,6 +62,16 @@
     .nav-cta{background:var(--orange)!important;color:#fff!important;padding:9px 18px;border-radius:var(--r-sm);font-weight:800!important}
     .nav-cta:hover{background:#d14d22!important;color:#fff!important}
 
+    /* dropdown */
+    .nav-has-dropdown{position:relative}
+    .nav-has-dropdown>a{display:flex;align-items:center;gap:4px}
+    .nav-has-dropdown>a svg{width:10px;height:10px;transition:transform .2s;flex-shrink:0}
+    .nav-has-dropdown:hover>a svg{transform:rotate(180deg)}
+    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh-md);min-width:230px;padding:8px;opacity:0;visibility:hidden;transition:opacity .18s,transform .18s;transform:translateX(-50%) translateY(-6px)}
+    .nav-has-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+    .nav-dropdown-menu a{display:block;padding:9px 14px;font-size:12px;font-weight:600;color:var(--text);border-radius:var(--r-sm);transition:all .15s;letter-spacing:.01em}
+    .nav-dropdown-menu a:hover{background:var(--off);color:var(--orange)}
+
     /* ── HERO ────────────────────────────────── */
     #hero{min-height:100vh;display:flex;align-items:center;padding-top:68px;background:var(--preto);position:relative;overflow:hidden}
     .hero-bg{position:absolute;inset:0;background:url('assets/hero.webp') right center/cover no-repeat;opacity:.58}
@@ -151,6 +161,11 @@
     .eq-header{text-align:center;margin-bottom:52px}
     #equipe h2{font-size:clamp(24px,2.8vw,38px);font-weight:900;color:var(--preto);line-height:1.1;letter-spacing:-.02em;margin-bottom:10px}
     .eq-sub{font-size:15px;color:var(--muted);max-width:520px;margin:0 auto}
+    .eq-footer{text-align:center;margin-top:40px}
+    .eq-more-btn{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--verde);border:1.5px solid var(--verde);padding:11px 22px;border-radius:var(--r-sm);transition:all .18s;letter-spacing:.02em}
+    .eq-more-btn:hover{background:var(--verde);color:#fff}
+    .eq-more-btn svg{transition:transform .18s}
+    .eq-more-btn:hover svg{transform:translateX(3px)}
     .eq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
     .eq-card{background:var(--white);border-radius:var(--r-md);overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh-sm);transition:all .22s}
     .eq-card:hover{box-shadow:var(--sh-md);transform:translateY(-3px)}
@@ -313,10 +328,24 @@
       </svg>
     </a>
     <ul class="nav-links">
-      <li><a href="#servicos">Tratamentos</a></li>
+      <li class="nav-has-dropdown">
+        <a href="#servicos">
+          Tratamentos
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="tratamentos/coluna-sem-dor-21-dias.html">Coluna Sem Dor em 21 Dias</a>
+          <a href="tratamentos/joelho-blindado.html">Joelho Blindado</a>
+          <a href="tratamentos/atleta-prime.html">Atleta Prime</a>
+          <a href="tratamentos/joelho-2.html">Joelho 2.0</a>
+          <a href="tratamentos/quiropraxia.html">Quiropraxia</a>
+          <a href="tratamentos/funcional-prime.html">Funcional Prime</a>
+        </div>
+      </li>
       <li><a href="#diferenciais">Diferenciais</a></li>
       <li><a href="#equipe">Equipe</a></li>
-      <li><a href="https://wa.me/5516000000000" class="nav-cta">Agendar avaliação</a></li>
+      <li><a href="sobre-nos.html">Quem somos</a></li>
+      <li><a href="https://wa.me/5516000000000" class="nav-cta">Pré-avaliação gratuita</a></li>
     </ul>
   </nav>
 </header>
@@ -502,8 +531,8 @@
       </a>
     </div>
     <div class="serv-extra">
-      <p>Não sabe qual tratamento faz sentido para você? <strong>A avaliação fisioterapêutica é o ponto de partida.</strong> Em uma consulta, você já sai com diagnóstico e plano.</p>
-      <a href="https://wa.me/5516000000000" class="btn btn--orange">Agendar minha avaliação</a>
+      <p>Não sabe qual tratamento faz sentido para você? <strong>A pré-avaliação gratuita é o ponto de partida.</strong> 30 minutos na clínica, sem custo algum. Você sai com orientação clara sobre o próximo passo.</p>
+      <a href="https://wa.me/5516000000000" class="btn btn--orange">Agendar pré-avaliação gratuita</a>
     </div>
   </div>
 </section>
@@ -583,6 +612,12 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="eq-footer reveal">
+      <a href="sobre-nos.html" class="eq-more-btn">
+        Conhecer a equipe
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -710,8 +745,8 @@
 <section id="cta">
   <div class="cta-content">
     <span class="label label--white">Próximo passo</span>
-    <h2>A avaliação é o primeiro passo. E <em>ele já vale muito.</em></h2>
-    <p>No primeiro atendimento você já sai com um diagnóstico real e um plano de tratamento. Sem enrolação, sem aquela sensação de que foi só uma consulta.</p>
+    <h2>A pré-avaliação é gratuita. E ela <em>já vale muito.</em></h2>
+    <p>30 minutos na clínica, sem custo algum. Você sai sabendo o que está causando a dor e o caminho para resolver de vez.</p>
     <a href="https://wa.me/5516000000000" class="cta-btn">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.858L.057 23.862a.5.5 0 0 0 .612.612l6.004-1.477A11.941 11.941 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.864 9.864 0 0 1-5.031-1.38l-.36-.214-3.733.917.936-3.625-.236-.374A9.862 9.862 0 0 1 2.118 12C2.118 6.57 6.57 2.118 12 2.118c5.43 0 9.882 4.452 9.882 9.882 0 5.43-4.452 9.882-9.882 9.882z"/></svg>
       Agendar pelo WhatsApp
